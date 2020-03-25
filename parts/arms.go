@@ -1,8 +1,8 @@
 package parts
 
 var (
-	Arms = Parts{
-		left: []string{
+	Arms = Part{
+		Left: []string{
 			"╰",
 			"ヽ",
 			"\\",
@@ -24,14 +24,14 @@ var (
 			"乁",
 			"o͡͡͡╮",
 		},
-		symmetric: []string{
+		Symmetric: []string{
 			"凸",
 			"〜",
 			"┌∩┐",
 			"∩",
 			"╭∩╮",
 		},
-		right: []string{
+		Right: []string{
 			"╯",
 			"ﾉ",
 			"ノ",

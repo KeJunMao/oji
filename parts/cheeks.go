@@ -1,8 +1,8 @@
 package parts
 
 var (
-	Cheeks = Parts{
-		symmetric: []string{
+	Cheeks = Part{
+		Symmetric: []string{
 			".",
 			"✿",
 			"˵",

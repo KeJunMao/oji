@@ -3,7 +3,8 @@ package qs
 import (
 	"fmt"
 	"github.com/AlecAivazis/survey/v2"
-	"github.com/kejunmao/oji/parts"
+	"github.com/kejunmao/oji/app"
+	gparts "github.com/kejunmao/oji/parts"
 	"reflect"
 )
 
@@ -13,72 +14,9 @@ const (
 )
 
 var (
-	Qs = []*survey.Question{
-		{
-			Name: "armLeft",
-			Prompt: &survey.Select{
-				Message: "选择左胳膊:",
-				Options: parts.Arms.Left(),
-			},
-		},
-		{
-			Name: "armRight",
-			Prompt: &survey.Select{
-				Message: "选择右胳膊:",
-				Options: parts.Arms.Right(),
-			},
-		},
-		{
-			Name: "bodyLeft",
-			Prompt: &survey.Select{
-				Message: "选择左身体:",
-				Options: parts.Bodies.Left(),
-			},
-		},
-		{
-			Name: "bodyRight",
-			Prompt: &survey.Select{
-				Message: "选择右身体:",
-				Options: parts.Bodies.Right(),
-			},
-		},
-		{
-			Name: "cheekLeft",
-			Prompt: &survey.Select{
-				Message: "选择左腮红:",
-				Options: parts.Cheeks.Right(),
-			},
-		},
-		{
-			Name: "cheekRight",
-			Prompt: &survey.Select{
-				Message: "选择右腮红:",
-				Options: parts.Cheeks.Right(),
-			},
-		},
-		{
-			Name: "eyeLeft",
-			Prompt: &survey.Select{
-				Message: "选择左眼睛:",
-				Options: parts.Eyes.Right(),
-			},
-		},
-		{
-			Name: "eyeRight",
-			Prompt: &survey.Select{
-				Message: "选择右眼睛:",
-				Options: parts.Eyes.Right(),
-			},
-		},
-		{
-			Name: "noseMouth",
-			Prompt: &survey.Select{
-				Message: "选择鼻子嘴巴:",
-				Options: parts.NosesMouths.Right(),
-			},
-		},
-	}
-	Op = []*survey.Question{
+	parts = app.Parts()
+	qs    []*survey.Question
+	Op    = []*survey.Question{
 		{
 			Name: "copy",
 			Prompt: &survey.Confirm{
@@ -116,4 +54,78 @@ func PrintOji() string {
 	}
 	fmt.Println(emoji)
 	return emoji
+}
+
+func Qs(p gparts.Parts) []*survey.Question {
+	parts = p
+	initQs()
+	return qs
+}
+
+func initQs() {
+	qs = []*survey.Question{
+		{
+			Name: "armLeft",
+			Prompt: &survey.Select{
+				Message: "选择左胳膊:",
+				Options: parts.Arms.PLeft(),
+			},
+		},
+		{
+			Name: "armRight",
+			Prompt: &survey.Select{
+				Message: "选择右胳膊:",
+				Options: parts.Arms.PRight(),
+			},
+		},
+		{
+			Name: "bodyLeft",
+			Prompt: &survey.Select{
+				Message: "选择左身体:",
+				Options: parts.Bodies.PLeft(),
+			},
+		},
+		{
+			Name: "bodyRight",
+			Prompt: &survey.Select{
+				Message: "选择右身体:",
+				Options: parts.Bodies.PRight(),
+			},
+		},
+		{
+			Name: "cheekLeft",
+			Prompt: &survey.Select{
+				Message: "选择左腮红:",
+				Options: parts.Cheeks.PRight(),
+			},
+		},
+		{
+			Name: "cheekRight",
+			Prompt: &survey.Select{
+				Message: "选择右腮红:",
+				Options: parts.Cheeks.PRight(),
+			},
+		},
+		{
+			Name: "eyeLeft",
+			Prompt: &survey.Select{
+				Message: "选择左眼睛:",
+				Options: parts.Eyes.PRight(),
+			},
+		},
+		{
+			Name: "eyeRight",
+			Prompt: &survey.Select{
+				Message: "选择右眼睛:",
+				Options: parts.Eyes.PRight(),
+			},
+		},
+		{
+			Name: "noseMouth",
+			Prompt: &survey.Select{
+				Message: "选择鼻子嘴巴:",
+				Options: parts.NosesMouths.PRight(),
+			},
+		},
+	}
 }

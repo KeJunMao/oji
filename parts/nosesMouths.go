@@ -1,7 +1,7 @@
 package parts
 
 var (
-	NosesMouths = Parts{symmetric: []string{
+	NosesMouths = Part{Symmetric: []string{
 		"ω",
 		"_",
 		"ਊ",

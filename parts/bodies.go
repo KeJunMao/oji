@@ -1,8 +1,8 @@
 package parts
 
 var (
-	Bodies = Parts{
-		left: []string{
+	Bodies = Part{
+		Left: []string{
 			"(",
 			"[",
 			"༼",
@@ -10,14 +10,14 @@ var (
 			"໒(",
 			"/",
 		},
-		symmetric: []string{
+		Symmetric: []string{
 			"|",
 			"⁞",
 			"།",
 			"།",
 			"║",
 		},
-		right: []string{
+		Right: []string{
 			")",
 			"]",
 			"༽",

@@ -1,7 +1,7 @@
 package parts
 
 var (
-	Eyes = Parts{symmetric:[]string{
+	Eyes = Part{Symmetric:[]string{
 		"^",
 		"＾",
 		"o",
